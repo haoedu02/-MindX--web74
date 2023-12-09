@@ -16,12 +16,15 @@ class DatabaseService {
         ping: 1,
       });
       console.log(
-        `Pinged your development. Your connect successfully to MongoDB`
+        `Pinged your development. You connect successfully to MongoDB`
       );
     } catch (error) {
       console.log(`Error`, error);
       throw new Error(error.message);
     }
+  }
+  get users() {
+    return this.db.collection("users");
   }
 }
 
